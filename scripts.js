@@ -1,12 +1,16 @@
+let dice = [];
+
 class Die {
-    constructor(value) {
-        this.value = value;
+    constructor() {
+        this.roll();
+        dice.push(this);
     }
+
     roll() {
-        console.log("Rolled.");
         this.value = Math.floor(Math.random() * 6 + 1);
     }
 }
 
-let testDie = new Die(5);
-testDie.roll();
+let testDie = new Die();
+console.log(testDie.value);
+console.log(dice);
