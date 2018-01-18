@@ -18,4 +18,5 @@ body {
     display: inline-block;
     text-align: center;
     font-size: 300px;
+    line-height: .65;
 }

@@ -1,13 +1,15 @@
 let dice = [];
+let btnGenerate = $("#btn-generate");
+let btnRoll = $("#btn-roll");
 
 class Die {
     constructor() {
         this.roll();
         this.setText();
-        dice.push(this);
         this.div = $("<div>" + this.text + "</div>");
         $(this.div).addClass("die");
         $(this.div).appendTo("#dice-container");
+        dice.push(this);
     }
 
     roll() {
@@ -31,9 +33,6 @@ class Die {
     }
 }
 
-let testDie = new Die();
-console.log(testDie.value);
-console.log(dice);
-let testDie2 = new Die();
-console.log(testDie2.value);
-console.log(dice);
+$(btnGenerate).click(function() {
+    let die = new Die();
+})
