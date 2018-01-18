@@ -1,7 +1,16 @@
-body {
-    margin-top: 3em;
-}
-
 #buttons-container {
     width: 60%;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#dice-container {
+    width: 60%;
+}
+
+.die {
+    width: 10%;
+    padding-top: 10%;
+    margin: 1em;
+    border: 2px solid black;
 }
