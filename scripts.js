@@ -7,6 +7,9 @@ class Die {
     constructor() {
         this.div = $("<div></div>")
         this.roll();
+        $(this.div).click(() => {
+            this.roll();
+        });
         $(this.div).appendTo("#dice-container");
         dice.push(this);
     }
