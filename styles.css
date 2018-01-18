@@ -1,6 +1,7 @@
 body {
     margin-top: 3em;
     background-image: url("http://supernovathemes.com/wp-content/themes/supernovathemes/images/bg/b6.png");
+    user-select: none;
 }
 
 #buttons-container {
