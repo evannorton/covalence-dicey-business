@@ -5,13 +5,17 @@ let btnSum = $("#btn-sum");
 
 class Die {
     constructor() {
-        this.div = $("<div></div>")
+        this.div = $("<div></div>");
         this.roll();
+        $(this.div).appendTo("#dice-container");
+        dice.push(this);
         $(this.div).click(() => {
             this.roll();
         });
-        $(this.div).appendTo("#dice-container");
-        dice.push(this);
+        $(this.div).dblclick(() => {
+            $(this.div).remove();
+            dice.splice($.inArray(this, dice),1);
+        });
     }
 
     roll() {
