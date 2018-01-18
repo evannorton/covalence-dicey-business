@@ -4,35 +4,41 @@ let btnRoll = $("#btn-roll");
 
 class Die {
     constructor() {
+        //create div
+        this.div = $("<div></div>")
+        //call roll method
         this.roll();
-        this.setText();
-        this.div = $("<div>" + this.text + "</div>");
-        $(this.div).addClass("die");
+        //add div to screen
         $(this.div).appendTo("#dice-container");
         dice.push(this);
     }
 
     roll() {
         this.value = Math.floor(Math.random() * 6 + 1);
-    }
-
-    setText() {
         if (this.value === 1 ) {
-            this.text = "&#9856";
+            this.value = "⚀";
         } else if (this.value === 2) {
-            this.text = "&#9857"
+            this.value = "⚁"
         } else if (this.value === 3) {
-            this.text = "&#9858";
+            this.value = "⚂";
         } else if (this.value === 4 ) {
-            this.text = "&#9859";
+            this.value = "⚃";
         } else if (this.value === 5) {
-            this.text = "&#9860";
+            this.value = "⚄";
         } else {
-            this.text = "&#9861";
+            this.value = "⚅";
         }
+        $(this.div).text("" + this.value + "");
+        $(this.div).addClass("die");
     }
 }
 
 $(btnGenerate).click(function() {
     let die = new Die();
-})
+});
+
+$(btnRoll).click(function() {
+    for (let i = 0; i < dice.length; i++) {
+        dice[i].roll();
+    }
+});
